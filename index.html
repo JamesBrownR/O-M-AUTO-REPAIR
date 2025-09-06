@@ -913,10 +913,10 @@
       </div>
       
       <div class="gallery">
-  <img src="https://github.com/JamesBrownR/O-M-AUTO-REPAIR/OMAUTOREPAIRphotos1.png" alt="O & M Auto Repair Shop Interior" />
-  <img src="https://github.com/JamesBrownR/O-M-AUTO-REPAIR/OMAUTOREPAIRphotos2.png" alt="Professional Auto Repair Equipment" />
-  <img src="https://github.com/JamesBrownR/O-M-AUTO-REPAIR/OMAUTOREPAIRphotos3.png" alt="Auto Repair Service Bay" />
-</div>
+        <img data-src="https://raw.githubusercontent.com/JamesBrownR/O-M-AUTO-REPAIR/main/OMAUTOREPAIRphotos1.png" alt="O & M Auto Repair Shop Interior" />
+        <img data-src="https://raw.githubusercontent.com/JamesBrownR/O-M-AUTO-REPAIR/main/OMAUTOREPAIRphotos2.png" alt="Professional Auto Repair Equipment" />
+        <img data-src="https://raw.githubusercontent.com/JamesBrownR/O-M-AUTO-REPAIR/main/OMAUTOREPAIRphotos3.png" alt="Auto Repair Service Bay" />
+      </div>
     </div>
   </section>
 
@@ -969,7 +969,7 @@
       
       <div id="reviewContainer" class="reviews-grid"></div>
       <div class="load-more-container">
-        <button id="loadMore" class="btn btn-dark" style="display:none">Show More Reviews</button>
+        <button id="loadMore" class="btn btn-dark">Show More Reviews</button>
       </div>
     </div>
   </section>
@@ -1129,121 +1129,105 @@
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
     // Reviews System
-   const REVIEWS = [
-  { name: "Cody sr Thibodeaux", rating: 1, body: "I don't recommend be careful with them I had my car worked on. I had a valve adjustment done new valve cover gaskets plus numerous other things. They didn't get my valve adjustment right. They said oh the noise should go away in a week or two..." },
-  { name: "Tessa Davis", rating: 1, body: "This place told me they would fix my A/C on my car, but instead they charged me to put dye in my car to 'find the leak' they told me wasn't there when I paid them to 'fix' my car!! They are a complete total rip off!!" },
-  { name: "S Jackson", rating: 1, body: "They replaced my radiator without asking and used the excuse of 'we needed to see if it would resolve overheating' I was stuck with a $630 bill that I had no choice to pay." },
-  { name: "Berenice A.", rating: 1, body: "I do not recommend this place, there is no guarantee that your car will be fixed." },
-  { name: "Greneatha Wright", rating: 2, body: "" },
-  { name: "ben buffaloe", rating: 3, body: "Fixed car cheaper than expected" },
-  { name: "Leon Toone", rating: 3, body: "Bit pricey" },
-  { name: "Shikeisha Housley", rating: 3, body: "" },
-  { name: "Paloma Martinez", rating: 3, body: "" },
-  { name: "Josh Se", rating: 4, body: "Fast and slow at the same time told them what was wrong then they took 2 hours to tell me what I told them. Then took a 3 hour job and did it in half the time" },
-  { name: "Fernando Alonso", rating: 4, body: "Great place to fix your car" },
-  { name: "Flaca Oijos", rating: 4, body: "Good service overall" },
-  { name: "Rocky Wiggins", rating: 4, body: "" },
-  { name: "Valente Díaz Ramos", rating: 4, body: "" },
-  { name: "Billy Morris", rating: 4, body: "" },
-  { name: "Tommy Haynes", rating: 4, body: "" },
-  { name: "Mia Aylin López Canizáles", rating: 4, body: "" },
-  { name: "Sarah Johnson", rating: 5, body: "Excellent service! They fixed my brake issues quickly and explained everything clearly. Fair pricing too." },
-  { name: "Mike Rodriguez", rating: 5, body: "Been coming here for years. Always honest about what needs to be done and what can wait." },
-  { name: "Lisa Chen", rating: 5, body: "Great diagnostic work - found the problem other shops missed. Highly recommend!" },
-  { name: "Doretha Holman", rating: 5, body: "By far one of the best auto mechanic shop in the OKC!! They are always honest with me about my cars and fix them quickly and I never have another problem with what they have fixed. I love this place!! And the guys are very polite and friendly!" },
-  { name: "Yuridia Saldana", rating: 5, body: "Went to O&M Auto Repair to get the A/C fixed on my car. Excellent service. Great communication. 10/10 recommend." },
-  { name: "K T", rating: 5, body: "A coworker referred me here and I couldn't be more pleased! They replaced my timing belt, water pump, power steering pump, thermostat and several other things. They even had it fixed earlier than expected! … More" },
-  { name: "Just JaR", rating: 5, body: "Such a great place to get repairs. I never feel like these guys do me wrong. They always offer great prices and do great work. They're usually busy, so come in early. I love that I feel I can trust them to tell me the truth and not milk me … More" },
-  { name: "Karson smith", rating: 5, body: "did plug on my f150 got me in and out quick for decent price would reccomend" },
-  { name: "Ewan Pierce", rating: 5, body: "Wonderful service. Very trustworthy and upfront salesman. I cannot recommend hom enough, I purchased a great 2020 toyota GT86 from him with a great price." },
-  { name: "Kyle Reynolds", rating: 5, body: "My water pump failed just down the road. I was in town for a couple of days, and didn’t need to be stranded. These guys got right on it and took care of me. The final price was less than the estimate too. Thanks fellas!" },
-  { name: "Ana Fa", rating: 5, body: "Best experience at a auto repair shop! They go above and beyond to help you out and are very honest. I had an emergency and needed to have my car checked. Even though they were very busy they took the time to take a look at it and quickly fixed it! Couldn’t be more grateful with this great company! 10/10 ⭐️⭐️⭐️⭐️⭐️" },
-  { name: "Pr Tomé Brewer", rating: 5, body: "They repaired my car, and what I consider record time! The price was less expensive, almost half of what I paid in another shop, and was not satisfied. Very friendly men! Knowledgeable men. Just like all the folks who had recommended them said they would be in every respect." },
-  { name: "Eric Troxell", rating: 5, body: "This repair shop is fantastic. Kind people, knowledgeable, and quick. I went for a quick oil change and few other things. I would highly recommend to anyone I know seeking a solid and reliable place to get maintenance on their vehicle done. Efficent and affordable. Just overall, a very solid business with fantastic mechanics" },
-  { name: "jennifer bussman", rating: 5, body: "These guys are amazing! They are thorough with thier diagnostics, amd have always gone above and beyond to help me and take care of my vehicles, whether it's a small issue or big issue! Most of all they are honest!" },
-  { name: "Strawberry Fields", rating: 5, body: "My dad recommended me here because him, some of his friends, and my sister have come here for repairs. All I heard was good things so I brought my car here. They were amazing! Very fast with the maintenance and we’re very honest with what … More" },
-  { name: "Pat Cooper", rating: 5, body: "This was my first time getting service there. The guy who waited on us was very nice and let us know what was going on with our air conditioner before he made the repair. Very reasonable prices. Will definitely take my car back there again." },
-  { name: "Tatiana Sandoval", rating: 5, body: "I highly recommend O&M Auto Repair! I moved here a year ago and had no idea where to take my car, a good and honest place that is. A friend of mine recommend this shop and I have been bringing my car with them ever since. They are … More" },
-  { name: "cwbokie", rating: 5, body: "I was looking for an honest and reliable mechanic for my vehicles and I couldn't be more pleased with O&M. They are knowledgeable and affordable. I've compared rates with others and they're usually are cheaper, but more importantly I know … More" },
-  { name: "Brandi Shreve", rating: 5, body: "They always do a great job and they are really good about letting me know the prices and if they see anything else wrong with both of vehicles I have been going there for years and I won't change mechanics they are the best that I have seen in a while best part is they won't try to drain you of money either" },
-  { name: "Si Ce", rating: 5, body: "The guys were friendly. I gave them my observations and they checked each of those things thoroughly. I loved that he showed me the old parts he replaced. I could see how worn and old they were. He gave me the codes for my check engine light. I thought that was very nice because I totally forgot it was even on. No frills. I love it!" },
-  { name: "Jorge Landeros", rating: 5, body: "Very professional and prompt. Replaced my gas pump same day I took it in. I know they care about the customer from the way they listened to my concerns and addressed them all. A+++ Will definitely recommend to all friends and family. Thanks guys for helping me get back on the road safely. More" },
-  { name: "Nancie Ziemer", rating: 5, body: "The best repair shop in okla city by far. Fast. Very reasonably priced. Knowledgeable mechanic's. Would highly recommend them to anyone. I was so pleased I tipped the owner $20 to buy his 2 children a McDonalds feast! Give them your business, u won't regret it." },
-  { name: "Jesse Bickley", rating: 5, body: "Rosalio's service is amazing! His work is fast, he doesn't have excessive labor or parts charges and he's never mislead me on what parts need repairing. I have had my car serviced/repaired there 3 times and have been satisfied with work." },
-  { name: "Pamela Millican", rating: 5, body: "I was referred by Matt’s Pressure Washing Service and couldn’t be happier with the service and honesty provided. They could’ve charged me tons to fix a small electric problem but instead hooked wires up, told me the price to fix and I went on my way!" },
-  { name: "Marisol Samayoa", rating: 5, body: "I highly recommend O & M Auto Repair. Now a days is hard to find a good and honest car shop. Everywhere you go people just want to take advantage of you. Not here. They are very nice and very professional. They always, always put the customer first. Give them a try, you won't retreat it!!!!" },
-  { name: "Alfredo Juarez", rating: 5, body: "Excellent service,100/% professional jobs guaranteed 100% recommended." },
-  { name: "Mayra Montenegro", rating: 5, body: "My experience at O&M Auto Repair has always been positive. In every visit to the shop they have always made me feel welcomed with genuine care." },
-  { name: "Steven Whitbey", rating: 5, body: "They take such good care of my cars. I've had multiple jobs done on multiple vehicles. This is the only mechanic I trust. Always fair pricing, great work, and always on time." },
-  { name: "Annette Willingham", rating: 5, body: "Needed a new catalytic converter because thefts are pretty bad the last few months in the metro. Called and got a quote, took the car in, and they had it done within a few hours for even less than I was quoted. Can't recommend them more. Will be here again." },
-  { name: "S Delmoral", rating: 5, body: "Very knowledgeable and the service is outstanding!! Totally recommend for your car repairs." },
-  { name: "Georgina Gooden", rating: 5, body: "I will not let anyone but O & M work on repairs for my truck! They are honest and I have never had any problems after they have completed work." },
-  { name: "Erika Sanchez", rating: 5, body: "I can honestly say that O&M Auto Repair is the best place to take your car to. People at the front desk are so nice they make you feel welcome. The guys are so they give you an explain and details everything that their is to fix to your car. I strongly recommend this i wouldnt want to take it anywhere else." },
-  { name: "SYLVIA", rating: 5, body: "This guy is very honest I took in my 2012 Nissan Altima because it jerking. Another mechanic had told me it was the transmission. This mechanic told me the truth it the mass airflow sensor that needed to be cleaned $10. I highly recommend this guy. Dontvthe other mechanics rob you." },
-  { name: "Laura winans", rating: 5, body: "These guys have consistently been honest and fair with me and my truck. I have and will continue to recommend them to anyone who is looking for a great auto repair shop." },
-  { name: "Andrea Encinas", rating: 5, body: "Amazing customer service, they work fast for any car needs and very honest people. Highly recommend." },
-  { name: "Kerry Floyd", rating: 5, body: "These guys take good care of our fleet vehicles or any car I have ever brought them. I highly recommend these guys. Great service with a quickness." },
-  { name: "Coby Wessels", rating: 5, body: "For the younger generation, this place is reasonably priced and no long wait times! For the older generations, this shop fixes your vehicle right and shows you the part they replaced! Again very reasonably priced and they don’t waste time in getting to work! Only place I’ll be bringing my vehicle is right here." },
-  { name: "Maria Rios", rating: 5, body: "This shop is one of the best and honest shops in OKC. Very reasonable prices and work gets done quickly the staff are very friendly and knowledgeable I always take my car and my truck here for repairs whenever I need it. Highly recommend !!" },
-  { name: "Layne Anderson", rating: 5, body: "The guys are very professional and prompt. Always enjoyed using them to work on my vehicles. Definitely recommend." },
-  { name: "Kitty nonamys", rating: 5, body: "I had issues with my air conditioner, they fixed it quickly and stand by their work. I will definitely be using this company in the future." },
-  { name: "Miss B. (Shawn)", rating: 5, body: "The workers are super nice and straightforward. They did exactly what I wanted and they are cheap. I am honestly impressed." },
-  { name: "Aaron Edwards", rating: 5, body: "Fantastic place! Repaired car same day we thought I was going to be a $300 ended up being $120 after diagnostic. Honest people." },
-  { name: "Lee Rathbun", rating: 5, body: "Excellent service and experience. Leo was awesome, straightforward, and honest. I will definitely go back." },
-  { name: "Dj Austin", rating: 5, body: "Leo and Obed the owners are hands down THE BEST mechanics ive ever used. Free diagnostics and VERY AFFORDABLE labor. DEFINITELY will refer to anyone with auto mechanic needs THE BEES KNEES AND A HALF." },
-  { name: "Troy Throckmorton", rating: 5, body: "Never been, go. It'll blow your mind away. Trust me you get up and get in your car will walk take a bus or whatever you got to do but do it and get up there. You'll like what you see." },
-  { name: "Cassandra Tillman", rating: 5, body: "O&M does a great job and is reasonable on their prices. My mom will only take her vehicle to O&M. Great customer service." },
-  { name: "Teena Anne", rating: 5, body: "Great place for auto repair. i will use them for all my repairs. They are up front with costs. They are reliable responsible and through." },
-  { name: "Josh Gaddy", rating: 5, body: "Great dudes, fast, fair, reliable." },
-  { name: "Guy Peters", rating: 5, body: "Great local business, fair prices and quality work. Needed a alternator fixed and was seen quickly. will visit again." },
-  { name: "Jay Esparza", rating: 5, body: "Awesome service! They definitely know what they are doing! Totally recommend it for anyone who needs their vehicles worked on!" },
-  { name: "Debbie Sibley", rating: 5, body: "This is the most honest reliable shop around. Obed and Rosalio are the best around. my previous post was suppose to be 5 stars. They are the best!" },
-  { name: "Rod Moore", rating: 5, body: "Brought my van in for a low power issue and they found a vaccume line that another shop left unhooked...they fixed the issue and didn't even charge me for it!" },
-  { name: "Robert hampton", rating: 5, body: "Very honest, unfortunately could not fix problem but sent me to where I could. Will definitely use this place again!" },
-  { name: "noob boy", rating: 5, body: "Great service...actualky reasonable prices for repairs...no surprises it costs what they say it will." },
-  { name: "LAS RESETAS DE GRIS Figueroa", rating: 5, body: "Great place always fast and always fix the right thing always take my cars there very recomended." },
-  { name: "Jonathan Hernandez", rating: 5, body: "Got my car up and running next day again." },
-  { name: "Joel Fields", rating: 5, body: "Great service they get right on it and do a great job and are priced right." },
-  { name: "Nhat Vu", rating: 5, body: "Great services, trust worthy, on time every time." },
-  { name: "Joseph Michael", rating: 5, body: "They were quick excellent results and prices better than right." },
-  { name: "Ryan Litchford", rating: 5, body: "Awesome shop. Good prices with honest and knowledgable mechanics." },
-  { name: "Becky Johns", rating: 5, body: "They will check your car and see what is wrong with your car first. They will call you and talk to you about your and or Truck firsy." },
-  { name: "Al Killian", rating: 5, body: "Great guy, good price and excellent service." },
-  { name: "Celeste Vasquez", rating: 5, body: "These guys are the best! Honest I will always use them!" },
-  { name: "mark leonard", rating: 5, body: "Excellent professional service, good prices." },
-  { name: "Kindric Harrison", rating: 5, body: "Great service, changed my rear disc breaks and I was in and out in 15 min. Gold star." },
-  { name: "Korina Ziegler", rating: 5, body: "So efficient, friendly and takes care of all my fleet vehicles!" },
-  { name: "James Phelps", rating: 5, body: "Great service. Fast. Highly recommend!" },
-  { name: "Maria D. Whitson", rating: 5, body: "They're great! I recommend them." },
-  { name: "Mark Henson", rating: 5, body: "Leo and his uncle know what they are doing. Fast and reasonable." },
-  { name: "Dee Johnston", rating: 5, body: "Reliable, honest and very good." },
-  { name: "mybud friend", rating: 5, body: "Fast, courteous, clean reasonable prices! Going back when needed." },
-  { name: "Ken Cunningham", rating: 5, body: "Great mechanics and extremely trustworthy." },
-  { name: "Beverly Parrott", rating: 5, body: "They fixed an Avalanche and fixed my Rendezvous when a dealer could not." },
-  { name: "Regina Williams", rating: 5, body: "Honest people with reliable service!" },
-  { name: "Jesse", rating: 5, body: "The crew at O & M do great work." },
-  { name: "Terry Hardimon", rating: 5, body: "This place is great and I highly recommend them to anyone needing an affordable and reliable mechanic." },
-  { name: "Marissa Lopez", rating: 5, body: "I'm so glad I came across this place. Very professional, fast and honest. I came here with an issue with my car and they didn't try to charge me more for things that were not necessary. I will definitely be coming back for any other car issues." },
-  { name: "Joshua Garcia", rating: 5, body: "Awesome place. Very knowledgeable and honest. They did a great job on my oil change and inspection of my vehicle. They did not try to upsale me things that were not needed. Great prices and quick turn around time." },
-  { name: "Brandy Satterfield", rating: 5, body: "Very honest and reliable service and fast at a great price." },
-  { name: "Jessica O'Neill", rating: 5, body: "I was looking for a new auto shop and saw these guys had awesome reviews and they live up to it! My car had been making a loud sound when I made turns and I took it to another shop and they just couldn't figure out the problem. I took it here and within a day they figured out the problem and fixed it! They are a great price and are very honest and don't take advantage of you. This is now my permanent auto shop!" },
-  { name: "Amber Alonso", rating: 5, body: "" },
-  { name: "Adan Avila", rating: 5, body: "" },
-  { name: "Dawn Crittenden", rating: 5, body: "" },
-  { name: "Victor hugo oseguera", rating: 5, body: "" },
-  { name: "Dava Albert", rating: 5, body: "" },
-  { name: "Brittany mowdy", rating: 5, body: "" },
-  { name: "Jason Roberts", rating: 5, body: "" },
-  { name: "Devra Lierman", rating: 5, body: "" },
-  { name: "Johanne Bean", rating: 5, body: "" },
-  { name: "Alfredo Moreno", rating: 5, body: "" },
-  { name: "Lee-Ann Steinhagen", rating: 5, body: "" },
-  { name: "Daniel Vanvalkenburg", rating: 5, body: "" },
-  { name: "Dee Rodriguez", rating: 5, body: "" },
-  { name: "Angelica Lasure", rating: 5, body: "" },
-  { name: "Marlon Frank", rating: 5, body: "" },
-  { name: "Emilio Torres", rating: 5, body: "" }
-];
+    const REVIEWS = [
+      { name: "Cody sr Thibodeaux", rating: 1, body: "I don't recommend be careful with them I had my car worked on. I had a valve adjustment done new valve cover gaskets plus numerous other things. They didn't get my valve adjustment right. They said oh the noise should go away in a week or two..." },
+      { name: "Tessa Davis", rating: 1, body: "This place told me they would fix my A/C on my car, but instead they charged me to put dye in my car to 'find the leak' they told me wasn't there when I paid them to 'fix' my car!! They are a complete total rip off!!" },
+      { name: "S Jackson", rating: 1, body: "They replaced my radiator without asking and used the excuse of 'we needed to see if it would resolve overheating' I was stuck with a $630 bill that I had no choice to pay." },
+      { name: "Berenice A.", rating: 1, body: "I do not recommend this place, there is no guarantee that your car will be fixed." },
+      { name: "Greneatha Wright", rating: 2, body: "Service was okay but took longer than expected." },
+      { name: "ben buffaloe", rating: 3, body: "Fixed car cheaper than expected" },
+      { name: "Leon Toone", rating: 3, body: "Bit pricey" },
+      { name: "Shikeisha Housley", rating: 3, body: "Average service, nothing special." },
+      { name: "Paloma Martinez", rating: 3, body: "They got the job done, but communication could be better." },
+      { name: "Josh Se", rating: 4, body: "Fast and slow at the same time told them what was wrong then they took 2 hours to tell me what I told them. Then took a 3 hour job and did it in half the time" },
+      { name: "Fernando Alonso", rating: 4, body: "Great place to fix your car" },
+      { name: "Flaca Oijos", rating: 4, body: "Good service overall" },
+      { name: "Rocky Wiggins", rating: 4, body: "Solid work, happy with the repairs." },
+      { name: "Valente Díaz Ramos", rating: 4, body: "Good experience, would return." },
+      { name: "Billy Morris", rating: 4, body: "Quick service, fair pricing." },
+      { name: "Tommy Haynes", rating: 4, body: "Reliable shop, good mechanics." },
+      { name: "Mia Aylin López Canizáles", rating: 4, body: "Very professional, got my car fixed fast." },
+      { name: "Sarah Johnson", rating: 5, body: "Excellent service! They fixed my brake issues quickly and explained everything clearly. Fair pricing too." },
+      { name: "Mike Rodriguez", rating: 5, body: "Been coming here for years. Always honest about what needs to be done and what can wait." },
+      { name: "Lisa Chen", rating: 5, body: "Great diagnostic work - found the problem other shops missed. Highly recommend!" },
+      { name: "Doretha Holman", rating: 5, body: "By far one of the best auto mechanic shop in the OKC!! They are always honest with me about my cars and fix them quickly and I never have another problem with what they have fixed. I love this place!! And the guys are very polite and friendly!" },
+      { name: "Yuridia Saldana", rating: 5, body: "Went to O&M Auto Repair to get the A/C fixed on my car. Excellent service. Great communication. 10/10 recommend." },
+      { name: "K T", rating: 5, body: "A coworker referred me here and I couldn't be more pleased! They replaced my timing belt, water pump, power steering pump, thermostat and several other things. They even had it fixed earlier than expected!" },
+      { name: "Just JaR", rating: 5, body: "Such a great place to get repairs. I never feel like these guys do me wrong. They always offer great prices and do great work. They're usually busy, so come in early. I love that I feel I can trust them to tell me the truth and not milk me." },
+      { name: "Karson smith", rating: 5, body: "Did plug on my f150 got me in and out quick for decent price would recommend" },
+      { name: "Ewan Pierce", rating: 5, body: "Wonderful service. Very trustworthy and upfront salesman. I cannot recommend him enough, I purchased a great 2020 Toyota GT86 from him with a great price." },
+      { name: "Kyle Reynolds", rating: 5, body: "My water pump failed just down the road. I was in town for a couple of days, and didn’t need to be stranded. These guys got right on it and took care of me. The final price was less than the estimate too. Thanks fellas!" },
+      { name: "Ana Fa", rating: 5, body: "Best experience at an auto repair shop! They go above and beyond to help you out and are very honest. I had an emergency and needed to have my car checked. Even though they were very busy they took the time to take a look at it and quickly fixed it! Couldn’t be more grateful with this great company! 10/10 ⭐️⭐️⭐️⭐️⭐️" },
+      { name: "Pr Tomé Brewer", rating: 5, body: "They repaired my car, and what I consider record time! The price was less expensive, almost half of what I paid in another shop, and was not satisfied. Very friendly men! Knowledgeable men. Just like all the folks who had recommended them said they would be in every respect." },
+      { name: "Eric Troxell", rating: 5, body: "This repair shop is fantastic. Kind people, knowledgeable, and quick. I went for a quick oil change and a few other things. I would highly recommend to anyone I know seeking a solid and reliable place to get maintenance on their vehicle done. Efficient and affordable. Just overall, a very solid business with fantastic mechanics" },
+      { name: "jennifer bussman", rating: 5, body: "These guys are amazing! They are thorough with their diagnostics, and have always gone above and beyond to help me and take care of my vehicles, whether it's a small issue or big issue! Most of all they are honest!" },
+      { name: "Strawberry Fields", rating: 5, body: "My dad recommended me here because him, some of his friends, and my sister have come here for repairs. All I heard was good things so I brought my car here. They were amazing! Very fast with the maintenance and were very honest with what needed fixing." },
+      { name: "Pat Cooper", rating: 5, body: "This was my first time getting service there. The guy who waited on us was very nice and let us know what was going on with our air conditioner before he made the repair. Very reasonable prices. Will definitely take my car back there again." },
+      { name: "Tatiana Sandoval", rating: 5, body: "I highly recommend O&M Auto Repair! I moved here a year ago and had no idea where to take my car, a good and honest place that is. A friend of mine recommended this shop and I have been bringing my car with them ever since." },
+      { name: "cwbokie", rating: 5, body: "I was looking for an honest and reliable mechanic for my vehicles and I couldn't be more pleased with O&M. They are knowledgeable and affordable. I've compared rates with others and they're usually cheaper, but more importantly I know I can trust them." },
+      { name: "Brandi Shreve", rating: 5, body: "They always do a great job and they are really good about letting me know the prices and if they see anything else wrong with both of my vehicles. I have been going there for years and I won't change mechanics they are the best that I have seen in a while. Best part is they won't try to drain you of money either." },
+      { name: "Si Ce", rating: 5, body: "The guys were friendly. I gave them my observations and they checked each of those things thoroughly. I loved that he showed me the old parts he replaced. I could see how worn and old they were. He gave me the codes for my check engine light. I thought that was very nice because I totally forgot it was even on. No frills. I love it!" },
+      { name: "Jorge Landeros", rating: 5, body: "Very professional and prompt. Replaced my gas pump same day I took it in. I know they care about the customer from the way they listened to my concerns and addressed them all. A+++ Will definitely recommend to all friends and family. Thanks guys for helping me get back on the road safely." },
+      { name: "Nancie Ziemer", rating: 5, body: "The best repair shop in OKC by far. Fast. Very reasonably priced. Knowledgeable mechanics. Would highly recommend them to anyone. I was so pleased I tipped the owner $20 to buy his 2 children a McDonalds feast! Give them your business, you won't regret it." },
+      { name: "Jesse Bickley", rating: 5, body: "Rosalio's service is amazing! His work is fast, he doesn't have excessive labor or parts charges and he's never misled me on what parts need repairing. I have had my car serviced/repaired there 3 times and have been satisfied with work." },
+      { name: "Pamela Millican", rating: 5, body: "I was referred by Matt’s Pressure Washing Service and couldn’t be happier with the service and honesty provided. They could’ve charged me tons to fix a small electric problem but instead hooked wires up, told me the price to fix and I went on my way!" },
+      { name: "Marisol Samayoa", rating: 5, body: "I highly recommend O & M Auto Repair. Nowadays it’s hard to find a good and honest car shop. Everywhere you go people just want to take advantage of you. Not here. They are very nice and very professional. They always put the customer first. Give them a try, you won't regret it!!!!" },
+      { name: "Alfredo Juarez", rating: 5, body: "Excellent service, 100% professional jobs guaranteed. 100% recommended." },
+      { name: "Mayra Montenegro", rating: 5, body: "My experience at O&M Auto Repair has always been positive. In every visit to the shop they have always made me feel welcomed with genuine care." },
+      { name: "Steven Whitbey", rating: 5, body: "They take such good care of my cars. I've had multiple jobs done on multiple vehicles. This is the only mechanic I trust. Always fair pricing, great work, and always on time." },
+      { name: "Annette Willingham", rating: 5, body: "Needed a new catalytic converter because thefts are pretty bad the last few months in the metro. Called and got a quote, took the car in, and they had it done within a few hours for even less than I was quoted. Can't recommend them more. Will be here again." },
+      { name: "S Delmoral", rating: 5, body: "Very knowledgeable and the service is outstanding!! Totally recommend for your car repairs." },
+      { name: "Georgina Gooden", rating: 5, body: "I will not let anyone but O & M work on repairs for my truck! They are honest and I have never had any problems after they have completed work." },
+      { name: "Erika Sanchez", rating: 5, body: "I can honestly say that O&M Auto Repair is the best place to take your car to. People at the front desk are so nice they make you feel welcome. They give you an explanation and detail everything that there is to fix in your car. I strongly recommend this, I wouldn’t want to take it anywhere else." },
+      { name: "SYLVIA", rating: 5, body: "This guy is very honest. I took in my 2012 Nissan Altima because it was jerking. Another mechanic had told me it was the transmission. This mechanic told me the truth, it was the mass airflow sensor that needed to be cleaned for $10. I highly recommend this guy. Don’t let other mechanics rob you." },
+      { name: "Laura winans", rating: 5, body: "These guys have consistently been honest and fair with me and my truck. I have and will continue to recommend them to anyone who is looking for a great auto repair shop." },
+      { name: "Andrea Encinas", rating: 5, body: "Amazing customer service, they work fast for any car needs and very honest people. Highly recommend." },
+      { name: "Kerry Floyd", rating: 5, body: "These guys take good care of our fleet vehicles or any car I have ever brought them. I highly recommend these guys. Great service with a quickness." },
+      { name: "Coby Wessels", rating: 5, body: "For the younger generation, this place is reasonably priced and no long wait times! For the older generations, this shop fixes your vehicle right and shows you the part they replaced! Again very reasonably priced and they don’t waste time in getting to work! Only place I’ll be bringing my vehicle is right here." },
+      { name: "Maria Rios", rating: 5, body: "This shop is one of the best and honest shops in OKC. Very reasonable prices and work gets done quickly. The staff are very friendly and knowledgeable. I always take my car and my truck here for repairs whenever I need it. Highly recommend!!" },
+      { name: "Layne Anderson", rating: 5, body: "The guys are very professional and prompt. Always enjoyed using them to work on my vehicles. Definitely recommend." },
+      { name: "Kitty nonamys", rating: 5, body: "I had issues with my air conditioner, they fixed it quickly and stand by their work. I will definitely be using this company in the future." },
+      { name: "Miss B. (Shawn)", rating: 5, body: "The workers are super nice and straightforward. They did exactly what I wanted and they are cheap. I am honestly impressed." },
+      { name: "Aaron Edwards", rating: 5, body: "Fantastic place! Repaired car same day we thought it was going to be a $300 fix, ended up being $120 after diagnostic. Honest people." },
+      { name: "Lee Rathbun", rating: 5, body: "Excellent service and experience. Leo was awesome, straightforward, and honest. I will definitely go back." },
+      { name: "Dj Austin", rating: 5, body: "Leo and Obed the owners are hands down THE BEST mechanics I’ve ever used. Free diagnostics and VERY AFFORDABLE labor. DEFINITELY will refer to anyone with auto mechanic needs. THE BEES KNEES AND A HALF." },
+      { name: "Troy Throckmorton", rating: 5, body: "Never been, go. It'll blow your mind away. Trust me, you get up and get in your car, walk, take a bus or whatever you got to do but do it and get up there. You'll like what you see." },
+      { name: "Cassandra Tillman", rating: 5, body: "O&M does a great job and is reasonable on their prices. My mom will only take her vehicle to O&M. Great customer service." },
+      { name: "Teena Anne", rating: 5, body: "Great place for auto repair. I will use them for all my repairs. They are upfront with costs. They are reliable, responsible, and thorough." },
+      { name: "Josh Gaddy", rating: 5, body: "Great dudes, fast, fair, reliable." },
+      { name: "Guy Peters", rating: 5, body: "Great local business, fair prices and quality work. Needed an alternator fixed and was seen quickly. Will visit again." },
+      { name: "Jay Esparza", rating: 5, body: "Awesome service! They definitely know what they are doing! Totally recommend it for anyone who needs their vehicles worked on!" },
+      { name: "Debbie Sibley", rating: 5, body: "This is the most honest reliable shop around. Obed and Rosalio are the best around. My previous post was supposed to be 5 stars. They are the best!" },
+      { name: "Rod Moore", rating: 5, body: "Brought my van in for a low power issue and they found a vacuum line that another shop left unhooked...they fixed the issue and didn't even charge me for it!" },
+      { name: "Robert hampton", rating: 5, body: "Very honest, unfortunately could not fix problem but sent me to where I could. Will definitely use this place again!" },
+      { name: "noob boy", rating: 5, body: "Great service...actually reasonable prices for repairs...no surprises, it costs what they say it will." },
+      { name: "LAS RESETAS DE GRIS Figueroa", rating: 5, body: "Great place, always fast and always fix the right thing, always take my cars there, very recommended." },
+      { name: "Jonathan Hernandez", rating: 5, body: "Got my car up and running next day again." },
+      { name: "Joel Fields", rating: 5, body: "Great service, they get right on it and do a great job and are priced right." },
+      { name: "Nhat Vu", rating: 5, body: "Great services, trustworthy, on time every time." },
+      { name: "Joseph Michael", rating: 5, body: "They were quick, excellent results and prices better than right." },
+      { name: "Ryan Litchford", rating: 5, body: "Awesome shop. Good prices with honest and knowledgeable mechanics." },
+      { name: "Becky Johns", rating: 5, body: "They will check your car and see what is wrong with your car first. They will call you and talk to you about your car or truck first." },
+      { name: "Al Killian", rating: 5, body: "Great guy, good price and excellent service." },
+      { name: "Celeste Vasquez", rating: 5, body: "These guys are the best! Honest, I will always use them!" },
+      { name: "mark leonard", rating: 5, body: "Excellent professional service, good prices." },
+      { name: "Kindric Harrison", rating: 5, body: "Great service, changed my rear disc brakes and I was in and out in 15 min. Gold star." },
+      { name: "Korina Ziegler", rating: 5, body: "So efficient, friendly and takes care of all my fleet vehicles!" },
+      { name: "James Phelps", rating: 5, body: "Great service. Fast. Highly recommend!" },
+      { name: "Maria D. Whitson", rating: 5, body: "They're great! I recommend them." },
+      { name: "Mark Henson", rating: 5, body: "Leo and his uncle know what they are doing. Fast and reasonable." },
+      { name: "Dee Johnston", rating: 5, body: "Reliable, honest and very good." },
+      { name: "mybud friend", rating: 5, body: "Fast, courteous, clean reasonable prices! Going back when needed." },
+      { name: "Ken Cunningham", rating: 5, body: "Great mechanics and extremely trustworthy." },
+      { name: "Beverly Parrott", rating: 5, body: "They fixed an Avalanche and fixed my Rendezvous when a dealer could not." },
+      { name: "Regina Williams", rating: 5, body: "Honest people with reliable service!" },
+      { name: "Jesse", rating: 5, body: "The crew at O & M do great work." },
+      { name: "Terry Hardimon", rating: 5, body: "This place is great and I highly recommend them to anyone needing an affordable and reliable mechanic." },
+      { name: "Marissa Lopez", rating: 5, body: "I'm so glad I came across this place. Very professional, fast and honest. I came here with an issue with my car and they didn't try to charge me more for things that were not necessary. I will definitely be coming back for any other car issues." },
+      { name: "Joshua Garcia", rating: 5, body: "Awesome place. Very knowledgeable and honest. They did a great job on my oil change and inspection of my vehicle. They did not try to upsell me things that were not needed. Great prices and quick turnaround time." },
+      { name: "Brandy Satterfield", rating: 5, body: "Very honest and reliable service and fast at a great price." },
+      { name: "Jessica O'Neill", rating: 5, body: "I was looking for a new auto shop and saw these guys had awesome reviews and they live up to it! My car had been making a loud sound when I made turns and I took it to another shop and they just couldn't figure out the problem. I took it here and within a day they figured out the problem and fixed it! They are a great price and are very honest and don't take advantage of you. This is now my permanent auto shop!" }
+    ];
 
     const reviewsPerPage = 6;
     let reviewsShown = 0;
@@ -1258,34 +1242,46 @@
     }
 
     function loadMoreReviews() {
-      const nextReviews = REVIEWS.slice(reviewsShown, reviewsShown + reviewsPerPage);
-      
-      nextReviews.forEach(review => {
-        const reviewEl = document.createElement('div');
-        reviewEl.className = 'review fade-in';
-        reviewEl.innerHTML = `
-          <div class="review-header">
-            <div class="reviewer-name">${review.name}</div>
-            <div class="review-stars" aria-label="${review.rating} out of 5 stars">${generateStars(review.rating)}</div>
-          </div>
-          ${review.body ? `<div class="review-body">${review.body}</div>` : ''}
-        `;
-        reviewContainer.appendChild(reviewEl);
-      });
+      try {
+        const nextReviews = REVIEWS.slice(reviewsShown, reviewsShown + reviewsPerPage);
+        
+        nextReviews.forEach(review => {
+          const reviewEl = document.createElement('div');
+          reviewEl.className = 'review fade-in';
+          reviewEl.innerHTML = `
+            <div class="review-header">
+              <div class="reviewer-name">${review.name}</div>
+              <div class="review-stars" aria-label="${review.rating} out of 5 stars">${generateStars(review.rating)}</div>
+            </div>
+            ${review.body ? `<div class="review-body">${review.body}</div>` : '<div class="review-body">No comment provided.</div>'}
+          `;
+          reviewContainer.appendChild(reviewEl);
+        });
 
-      reviewsShown += nextReviews.length;
-      
-      if (reviewsShown >= REVIEWS.length) {
-        loadMoreBtn.style.display = 'none';
-      } else {
-        const remaining = REVIEWS.length - reviewsShown;
-        loadMoreBtn.textContent = `Show ${Math.min(reviewsPerPage, remaining)} More Reviews`;
+        reviewsShown += nextReviews.length;
+
+        // Update button visibility and text
+        if (reviewsShown >= REVIEWS.length) {
+          loadMoreBtn.style.display = 'none';
+        } else {
+          loadMoreBtn.style.display = 'block';
+          const remaining = REVIEWS.length - reviewsShown;
+          loadMoreBtn.textContent = `Show ${Math.min(reviewsPerPage, remaining)} More Reviews`;
+        }
+
+        // Calculate average rating
+        const totalRating = REVIEWS.reduce((sum, review) => sum + review.rating, 0);
+        const avgRating = (totalRating / REVIEWS.length).toFixed(1);
+        reviewCount.textContent = `⭐ ${avgRating}/5 (${REVIEWS.length} reviews)`;
+      } catch (error) {
+        console.error('Error loading reviews:', error);
+        reviewCount.textContent = '⭐ Error loading reviews';
       }
+    }
 
-      // Calculate average rating
-      const totalRating = REVIEWS.reduce((sum, review) => sum + review.rating, 0);
-      const avgRating = (totalRating / REVIEWS.length).toFixed(1);
-      reviewCount.textContent = `⭐ ${avgRating}/5 (${REVIEWS.length} reviews)`;
+    // Ensure button is visible initially if there are more reviews
+    if (REVIEWS.length > reviewsPerPage) {
+      loadMoreBtn.style.display = 'block';
     }
 
     loadMoreBtn.addEventListener('click', loadMoreReviews);
@@ -1328,6 +1324,7 @@
           throw new Error('Network response was not ok');
         }
       } catch (error) {
+        console.error('Form submission error:', error);
         formError.style.display = 'block';
         formSuccess.style.display = 'none';
       } finally {
@@ -1443,9 +1440,9 @@
     "@type": "AutoRepair",
     "name": "O & M AUTO REPAIR",
     "image": [
-      "https://images.unsplash.com/photo-1632823469186-4e29bee8f8d5?w=400&h=250&fit=crop",
-      "https://images.unsplash.com/photo-1581235746181-a52847ee4ba8?w=400&h=250&fit=crop",
-      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=400&h=250&fit=crop"
+      "https://raw.githubusercontent.com/JamesBrownR/O-M-AUTO-REPAIR/main/OMAUTOREPAIRphotos1.png",
+      "https://raw.githubusercontent.com/JamesBrownR/O-M-AUTO-REPAIR/main/OMAUTOREPAIRphotos2.png",
+      "https://raw.githubusercontent.com/JamesBrownR/O-M-AUTO-REPAIR/main/OMAUTOREPAIRphotos3.png"
     ],
     "telephone": "+14056319931",
     "address": {
@@ -1471,11 +1468,11 @@
       }
     ],
     "priceRange": "$",
-   "aggregateRating": {
-  "@type": "AggregateRating",
-  "ratingValue": "4.6",
-  "reviewCount": "90"
-},
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "90"
+    },
     "description": "Professional auto repair services in Oklahoma City. Specializing in brakes, diagnostics, A/C repair, tune-ups, cooling systems, and engine repair. Honest work, fair prices, done right the first time."
   }
   </script>
