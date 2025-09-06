@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O & M AUTO REPAIR | Oklahoma City</title>
+  <meta name="description" content="Full‑service auto repair in OKC. Brakes, diagnostics, A/C, tune‑ups & more. Call +1 (405) 631‑9931." />
+  <meta property="og:title" content="O & M AUTO REPAIR" />
+  <meta property="og:description" content="Honest, fast, and reliable auto repair. Call now or book online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example" />
+  <meta name="theme-color" content="#D90429" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --red:#D90429; /* primary red */
+      --black:#0B0B0D; /* near-black for high contrast */
+      --white:#FFFFFF;
+      --gray:#F2F4F7; /* light gray for sections */
+      --mid:#7A7F87; /* mid gray for text */
+      --radius:18px;
+      --shadow:0 8px 24px rgba(0,0,0,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--black);background:var(--white)}
+    a{color:var(--red);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header.topbar{position:sticky;top:0;z-index:1000;background:var(--black);color:var(--white);box-shadow:var(--shadow)}
+    header .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--red),#A1011F);display:grid;place-items:center;color:var(--white);font-weight:800}
+    .brand h1{font-size:18px;margin:0;letter-spacing:.5px;}
+    .cta-row{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;border:none;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;transition:.2s filter,.2s transform}
+    .btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+    .btn-red{background:var(--red);color:var(--white)}
+    .btn-outline{background:transparent;color:var(--white);border:2px solid var(--white)}
+    .phone{font-weight:800;letter-spacing:.3px}
+    nav a{color:var(--white);opacity:.95;font-weight:600;margin-left:18px}
+    nav a:hover{opacity:1;text-decoration:underline}
+
+    .hero{background:linear-gradient(180deg,var(--black),#16161A);color:var(--white);padding:64px 0 40px}
+    .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+    .hero h2{font-size:40px;line-height:1.1;margin:0 0 14px}
+    .hero p{margin:0 0 20px;color:#E8E8EA}
+    .badge{display:inline-block;background:var(--red);color:var(--white);padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px}
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+
+    .quick-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .quick-specs .spec{background:var(--gray);border-radius:12px;padding:10px 12px;font-weight:700;text-align:center}
+
+    .section{padding:56px 0}
+    .section.gray{background:var(--gray)}
+    .section h3{margin:0 0 16px;font-size:28px}
+    .section p.lead{margin:0 0 26px;color:var(--mid)}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
+
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .service{background:var(--white);border-left:6px solid var(--red);border-radius:12px;box-shadow:var(--shadow);padding:16px}
+    .service h4{margin:0 0 8px}
+    .service p{margin:0;color:var(--mid)}
+
+    .reviews .pill{display:inline-block;background:var(--black);color:var(--white);padding:6px 12px;border-radius:999px;font-weight:800}
+    .review-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+    .review{background:var(--white);border-radius:12px;box-shadow:var(--shadow);padding:14px;display:flex;flex-direction:column;gap:8px;min-height:120px}
+    .stars{color:#FFB703;letter-spacing:1px}
+    .r-name{font-weight:800}
+    .r-body{color:var(--black)}
+    .reviews .actions{display:flex;justify-content:center;margin-top:12px}
+    .btn-dark{background:var(--black);color:var(--white)}
+
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    form.contact{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    form.contact label{display:block;font-weight:700;margin:12px 0 6px}
+    form.contact input, form.contact textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #D6DAE1;background:#fff;color:#111}
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .success,.error{display:none;margin-top:12px;padding:12px;border-radius:10px}
+    .success{background:#E7F8EE;color:#0B5F2A}
+    .error{background:#FCE8E8;color:#8A1321}
+
+    footer{background:var(--black);color:var(--white);padding:28px 0;margin-top:40px}
+    footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
+    footer a{color:#FCECEC}
+    .hours{background:var(--white);color:var(--black);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+
+    /* Mobile tweaks */
+    @media(max-width:900px){
+      .hero .grid, .contact-grid{grid-template-columns:1fr}
+      nav{display:none}
+      .quick-specs{grid-template-columns:1fr 1fr}
+    }
+
+    /* Sticky mobile call bar */
+    .callbar{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:999;background:var(--red);color:var(--white);box-shadow:var(--shadow);border-radius:999px}
+    .callbar a{display:flex;align-items:center;gap:10px;padding:12px 18px;color:var(--white);font-weight:800}
+  </style>
+</head>
+<body>
+  <!-- ===================== TOP BAR ===================== -->
+  <header class="topbar">
+    <div class="container wrap">
+      <div class="brand">
+        <div class="brand-logo">O&M</div>
+        <h1>O & M AUTO REPAIR</h1>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#gallery">Photos</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cta-row">
+        <a class="phone" href="tel:+14056319931">📞 +1 (405) 631‑9931</a>
+        <!-- Replace YOUR_LOCATION_ID with actual Square location ID (kept as plain link for GitHub Pages). -->
+        <a id="bookBtnTop" class="btn btn-red" href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" target="_blank" rel="noopener">Book Online</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <span class="badge">Full‑Service Auto Repair • OKC</span>
+          <h2>Honest work. Fair prices. Done right the first time.</h2>
+          <p>Brakes • A/C • Diagnostics • Tune‑ups • Radiators • Engines & more. Call now or book an appointment online.</p>
+          <div class="cta-row">
+            <a class="btn btn-red" href="tel:+14056319931">Call Now</a>
+            <a class="btn btn-outline" href="#contact">Email Us</a>
+          </div>
+          <div class="quick-specs">
+            <div class="spec">5101 S Western Ave, Oklahoma City, OK 73109</div>
+            <div class="spec">Mon–Fri 8:00 AM – 5:00 PM</div>
+            <div class="spec">Walk‑ins Welcome</div>
+          </div>
+        </div>
+        <div class="card">
+          <strong>Find us</strong>
+          <div style="margin-top:8px;border-radius:12px;overflow:hidden;">
+            <!-- Live Google Map (uses plain query embed for easy drop‑in) -->
+            <iframe title="Map to O & M AUTO REPAIR" width="100%" height="280" style="border:0" loading="lazy" allowfullscreen
+              src="https://www.google.com/maps?q=O%20%26%20M%20AUTO%20REPAIR%205101%20S%20Western%20Ave%20Oklahoma%20City&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section id="gallery" class="section gray">
+    <div class="container">
+      <h3>Shop Photos</h3>
+      <p class="lead">Drop <code>OMAUTOREPAIRphotos1.png</code>, <code>OMAUTOREPAIRphotos2.png</code>, and <code>OMAUTOREPAIRphotos3.png</code> in the repo root and they’ll render here automatically.</p>
+      <div class="gallery">
+        <img src="OMAUTOREPAIRphotos1.png" alt="O & M Auto Repair – photo 1" />
+        <img src="OMAUTOREPAIRphotos2.png" alt="O & M Auto Repair – photo 2" />
+        <img src="OMAUTOREPAIRphotos3.png" alt="O & M Auto Repair – photo 3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services" class="section">
+    <div class="container">
+      <h3>Popular Services</h3>
+      <div class="services">
+        <div class="service"><h4>Diagnostics</h4><p>Check engine lights & drivability issues identified quickly.</p></div>
+        <div class="service"><h4>Brakes & Rotors</h4><p>Quiet, safe stopping with quality parts.</p></div>
+        <div class="service"><h4>A/C & Heating</h4><p>Stay cool—leak checks, compressors, recharge.</p></div>
+        <div class="service"><h4>Cooling Systems</h4><p>Radiators, water pumps, hoses & thermostats.</p></div>
+        <div class="service"><h4>Tune‑Ups</h4><p>Plugs, coils, filters—restore power & MPG.</p></div>
+        <div class="service"><h4>Engines & More</h4><p>Gaskets, belts, sensors—done right the first time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section id="reviews" class="section gray reviews">
+    <div class="container">
+      <h3>Customer Reviews</h3>
+      <span class="pill" id="reviewCount">★★★★★ 0 reviews</span>
+      <p class="lead">Six reviews show first. Tap “Show more” to load the next six. Empty 5‑star reviews display with no body text.</p>
+
+      <!--
+        ================== HOW TO ADD REVIEWS ==================
+        1) Replace the REVIEWS array below with your real data.
+        2) Keep the compressed format EXACTLY like this for each review:
+           { name: "Reviewer 9", rating: 5, body: "" },
+        3) Do NOT add extra fields; we only render name, rating, body.
+        4) All ratings supported, e.g. 1,2,3,4,5 (you noted most are 5, with a few 1–4 star like Cody, Tessa, etc.).
+      -->
+      <script>
+        // ====== PASTE YOUR REVIEWS ARRAY HERE ======
+        // Example data (safe to delete). Keep the exact structure when you paste yours.
+        const REVIEWS = [
+          { name: "Cody sr Thibodeaux", rating: 1, body: "I don't recommend be careful with them I had my car worked on. I had a valve adjustment done new valve cover gaskets plus numerous other things. They didn't get my valve adjustment right. They said oh the noise should go away in a week or … More" },
+          { name: "Tessa Davis", rating: 1, body: "This place told me they would fix my A/C on my car, but instead they charged me to put dye in my car to 'find the leak' they told me wasn't there when I paid them to 'fix' my car!! They are a complete total rip off!! I expressed to the guy … More" },
+          { name: "S Jackson", rating: 1, body: "They replaced my radiator without asking and used the excuse of 'we needed to see if it would resolve overheating' I was stuck with a $630 bill that I had no choice to pay when previously they said it was not the radiator and it only had a small leak at the top." },
+          { name: "Berenice A.", rating: 1, body: "I do not recommend this place, there is no guarantee that your car will be fixed. Translated by Google ・ See original (Spanish)" },
+          { name: "Greneatha Wright", rating: 2, body: "" },
+          { name: "Greneatha Wright", rating: 2, body: "" },
+          { name: "ben buffaloe", rating: 3, body: "Fixed car cheaper than expected" },
+          { name: "Leon Toone", rating: 3, body: "Bit pricey" },
+          { name: "Shikeisha Housley", rating: 3, body: "" },
+          { name: "Paloma Martinez", rating: 3, body: "" },
+          { name: "Josh Se", rating: 4, body: "Fast and slow at the same time told then what was wrong then they took 2 hours to tell me what I told them. Then took a 3 hour job and did it in half the time" },
+          { name: "Fernando Alonso", rating: 4, body: "Great place to fix your car" },
+          { name: "Flaca Oijos", rating: 4, body: "Good" },
+          { name: "Rocky Wiggins", rating: 4, body: "" },
+          { name: "Valente Díaz Ramos", rating: 4, body: "" },
+          { name: "Billy Morris", rating: 4, body: "" },
+          { name: "Tommy Haynes", rating: 4, body: "" },
+          { name: "Mia Aylin López Canizáles", rating: 4, body: "" },
+        ];
+        // ====== END REVIEWS ARRAY ======
+      </script>
+
+      <div id="reviewContainer" class="review-list"></div>
+      <div class="actions"><button id="loadMore" class="btn btn-dark" style="display:none">Show more</button></div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div>
+        <h3>Email Us</h3>
+        <p class="lead">This form is ready for static hosting (GitHub Pages). Connect it to Formspree (or your preferred service) by replacing <strong>YOUR_FORMSPREE_ID</strong> below.</p>
+        <form class="contact" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(405) 555‑0123" />
+            </div>
+          </div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your vehicle" required></textarea>
+          <input type="hidden" name="_subject" value="New message from O & M AUTO REPAIR website" />
+          <div class="cta-row" style="margin-top:10px">
+            <button class="btn btn-red" type="submit">Send Message</button>
+            <a class="btn btn-outline" href="tel:+14056319931">Call Instead</a>
+          </div>
+          <div id="formSuccess" class="success">Thanks! We received your message.</div>
+          <div id="formError" class="error">Oops—something went wrong. Please call us at <a href="tel:+14056319931">(405) 631‑9931</a>.</div>
+        </form>
+      </div>
+      <div>
+        <h3>Visit Us</h3>
+        <div class="hours">
+          <strong>Hours</strong>
+          <div>Monday – Friday: 8:00 AM – 5:00 PM</div>
+          <div>Saturday – Sunday: Closed</div>
+          <hr style="border:none;border-top:1px solid #ECEDEF;margin:12px 0" />
+          <strong>Address</strong>
+          <div>5101 S Western Ave<br>Oklahoma City, OK 73109</div>
+          <div style="margin-top:10px"><a href="https://www.google.com/maps/place/O+%26+M+AUTO+REPAIR/@35.414706,-97.5302072,17z" target="_blank" rel="noopener">Open in Google Maps</a></div>
+          <div style="margin-top:12px"><a class="btn btn-red" href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" target="_blank" rel="noopener">Book with Square</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="cols">
+        <div>
+          <div class="brand" style="margin-bottom:8px">
+            <div class="brand-logo">O&M</div>
+            <h1 style="font-size:20px">O & M AUTO REPAIR</h1>
+          </div>
+          <div>5101 S Western Ave, Oklahoma City, OK 73109</div>
+          <div><a href="tel:+14056319931">(405) 631‑9931</a></div>
+        </div>
+        <div>
+          <strong>Navigate</strong>
+          <div><a href="#services">Services</a></div>
+          <div><a href="#gallery">Photos</a></div>
+          <div><a href="#reviews">Reviews</a></div>
+          <div><a href="#contact">Contact</a></div>
+        </div>
+        <div>
+          <strong>Book</strong>
+          <div><a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" target="_blank" rel="noopener">Book with Square</a></div>
+        </div>
+      </div>
+      <div style="margin-top:16px;color:#C7CBD3;font-size:14px">© <span id="year"></span> O & M AUTO REPAIR. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky call bar -->
+  <div class="callbar"><a href="tel:+14056319931">📞 Tap to Call O & M AUTO REPAIR</a></div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reviews pagination (6 at a time)
+    const perPage = 6;
+    let shown = 0;
+    const $wrap = document.getElementById('reviewContainer');
+    const $count = document.getElementById('reviewCount');
+    const $btn = document.getElementById('loadMore');
+
+    function starString(n){
+      const full = '★'.repeat(Math.max(0, Math.min(5, n)));
+      const empty = '☆'.repeat(5 - Math.max(0, Math.min(5, n)));
+      return full + empty;
+    }
+
+    function renderMore(){
+      const next = Math.min(perPage, REVIEWS.length - shown);
+      const slice = REVIEWS.slice(shown, shown + next);
+      slice.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'review';
+        const name = document.createElement('div');
+        name.className = 'r-name';
+        name.textContent = r.name;
+        const stars = document.createElement('div');
+        stars.className = 'stars';
+        stars.setAttribute('aria-label', r.rating + ' out of 5 stars');
+        stars.textContent = starString(r.rating);
+        const body = document.createElement('div');
+        body.className = 'r-body';
+        body.textContent = r.body || '';
+        card.appendChild(name); card.appendChild(stars); card.appendChild(body);
+        $wrap.appendChild(card);
+      });
+      shown += next;
+      const remaining = REVIEWS.length - shown;
+      const groupsLeft = Math.ceil(remaining / perPage);
+      if(remaining > 0){
+        $btn.style.display = 'inline-flex';
+        // Button should say e.g. "Show 6 more (total 7)" when 13 total and 6 initially shown
+        $btn.textContent = `Show ${Math.min(perPage, remaining)} more (total ${remaining})`;
+      } else {
+        $btn.style.display = 'none';
+      }
+      $count.textContent = `★★★★★ ${REVIEWS.length} reviews`;
+    }
+
+    $btn.addEventListener('click', renderMore);
+    // Initial load of 6
+    renderMore();
+
+    // Contact form UX for Formspree success (their redirect-less mode)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try{
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if(res.ok){
+          document.getElementById('formSuccess').style.display = 'block';
+          document.getElementById('formError').style.display = 'none';
+          form.reset();
+        } else {
+          throw new Error('Network');
+        }
+      } catch(err){
+        document.getElementById('formSuccess').style.display = 'none';
+        document.getElementById('formError').style.display = 'block';
+      }
+    });
+  </script>
+
+  <!-- LocalBusiness Schema for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "O & M AUTO REPAIR",
+    "telephone": "+14056319931",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5101 S Western Ave",
+      "addressLocality": "Oklahoma City",
+      "addressRegion": "OK",
+      "postalCode": "73109",
+      "addressCountry": "US"
+    },
+    "openingHours": [
+      "Mo-Fr 08:00-17:00"
+    ],
+    "image": [
+      "OMAUTOREPAIRphotos1.png",
+      "OMAUTOREPAIRphotos2.png",
+      "OMAUTOREPAIRphotos3.png"
+    ],
+    "url": "https://your-domain.example"
+  }
+  </script>
+</body>
+</html>
